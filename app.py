@@ -85,9 +85,9 @@ def index():
     ip_cliente = request.headers.get('X-Forwarded-For', request.remote_addr)
     print(f"[INTENTO DE ACCESO] IP detectada: {ip_cliente}")
 
-    if ip_cliente not in IPS_PERMITIDAS:
-        print(f"[RECHAZADO] IP no permitida: {ip_cliente}")
-        return f"<h1>Acceso denegado para {ip_cliente}</h1>", 403
+    #if ip_cliente not in IPS_PERMITIDAS:
+     #   print(f"[RECHAZADO] IP no permitida: {ip_cliente}")
+      #  return f"<h1>Acceso denegado para {ip_cliente}</h1>", 403
 
     print(f"[ACEPTADO] IP permitida: {ip_cliente}")
     # Generar un ID de sesión único si no existe
