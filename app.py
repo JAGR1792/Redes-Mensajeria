@@ -9,7 +9,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'NOTENEMOSCLAVEPORQUENOMEDIOLACABEZAPARAIMAGINARMEUNACLAVE'
 socketio = SocketIO(app, cors_allowed_origins="*")
 
-IPS_PERMITIDAS = ['192.168.1.2', '192.168.1.3', '127.0.0.1']
+#IPS_PERMITIDAS = ['192.168.1.2', '192.168.1.3', '127.0.0.1']
 DB_PATH = 'chat_messages.db'
 
 # Inicializar la base de datos
@@ -177,4 +177,4 @@ def on_join_private(data):
 
 if __name__ == '__main__':
     init_db()
-    socketio.run(app, host='0.0.0.0', port=5000)
+    socketio.run(app, host='0.0.0.0', port=5000, debug='true')
